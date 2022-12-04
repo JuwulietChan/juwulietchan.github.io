@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Anime";
+  src: url("jujutsu-kaisen/Jujutsu\ Kaisen.ttf");
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Anime";
+  min-height: 100vh;
+  background-color: rgb(255, 230, 233);
+  overflow-x: hidden;
+}
+
+header {
+  height: 60vh;
+  min-height: 200px;
+  background-color: lightpink;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.4em;
+  position: relative;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 10em;
+  justify-items: center;
+  align-items: center;
+}
+main img {
+  width: 100%;
+}
+.title {
+  display: block;
+  font-size: 3em;
+  box-sizing: border-box;
+  padding: 50px;
+  margin-block: 20px;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(255, 168, 181);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 125, 147);
+  border-radius: 10px;
+}
+.j0 {
+  --rot: 10deg;
+  position: absolute;
+  top: 40px;
+  left: 300px;
+  width: 70px;
+  rotate: var(--rot);
+  transition-duration: 500ms;
+}
+.j1 {
+  --rot: -10deg;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  width: 200px;
+  rotate: var(--rot);
+  transition-duration: 500ms;
+}
+.j2 {
+  --rot: 15deg;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  width: 200px;
+  rotate: var(--rot);
+  transition-duration: 500ms;
+}
+header:hover .j0,
+header:hover .j1,
+header:hover .j2 {
+  opacity: 0.1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.container::before {
+  position: absolute;
+  content: "hover me";
+  bottom: -20px;
+  left: -30px;
+  rotate: 20deg;
+  font-size: 0.5em;
+  font-family: cursive;
+  opacity: 1;
+  transition-duration: 300ms;
+}
+header:hover .container::before {
+  opacity: 0.1;
+}
+.container::after {
+  position: absolute;
+  content: "Julcia-chan";
+  bottom: -20px;
+  right: -80px;
+  rotate: -20deg;
+  font-size: 0.5em;
+  font-family: cursive;
+  opacity: 1;
+  transition-duration: 300ms;
+}
+header:hover .container::after {
+  opacity: 0.1;
+}
+header:hover .container span {
+  opacity: 0.5;
+}
+.hovImg {
+  position: absolute;
+  width: 200px;
+  translate: 0 0;
+  transition-duration: 350ms;
+  opacity: 0;
+  z-index: 999;
+}
+.j0.active,
+.j1.active,
+.j2.active {
+  animation: spin 3s ease-in-out 1;
+}
+header:hover .one {
+  translate: -250px 125px;
+  rotate: -30deg;
+  opacity: 1;
+}
+header:hover .two {
+  width: 270px;
+  translate: 250px -45px;
+  rotate: 30deg;
+  opacity: 1;
+}
+header:hover .three {
+  width: 350px;
+  translate: -250px -75px;
+  rotate: 10deg;
+  opacity: 1;
+}
+header:hover .four {
+  width: 250px;
+  translate: 30px 25px;
+  rotate: -10deg;
+  opacity: 1;
+}
+@keyframes spin {
+  0% {
+    rotate: var(--rot);
+  }
+  100% {
+    rotate: calc(5400deg + var(--rot));
+  }
+}
